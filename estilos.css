@@ -6,13 +6,31 @@ body{
 	font-family: Arial;
 	font-size: 16px;/*normalize loc oloca a 16px*/
 }
+footer{
+	background: #22BCE0;
+	text-align: center;
+	padding: 1em;
+	color: rgba(255,255,255,0.7);
+}
+footer p:first-child{
+	margin-bottom: 0;
+}
+footer p:last-child{
+	margin-top: 0;
+}
+footer p:last-child:after{
+	content: " -";
+}
+footer p:last-child:before{
+	content: "- ";
+}
 header{
 	background: #344B54;/*RVA va de a 255 FF=255 es el numero mas alto*/
 	/*0 es el menor F es el mayor, 7 es el intermedio*/
 	color: white;
 	overflow: hidden;
 	padding: 0.5em;/*probar con margin es diferente*/
-	margin: 1em;
+	position: relative; /*para que trabaje con absolute*/
 }
 header figure{
 	float: left;
@@ -20,10 +38,17 @@ header figure{
 header h1{
 	font-size: 1.2em;/*20% mas*/
 	font-weight: normal;/*sin negrita*/
+	margin: 0 70px 0 0;
 	/*em para los textos*/
 }
+header #avatar{
+	margin: 0.5em 0.5em 0 0;
+	position: absolute;/*se comporta en funcion de su contenedor con position relative y si no hay coge al body, en este caso su contenedor es header*/
+	right: 0;
+	top: 0;
+}
 header #avatar img{
-	width: 54px;/*el alto se calcula automaticamente y proporcionalmente*/
+	width: 55px;/*el alto se calcula automaticamente y proporcionalmente*/
 	border-radius: 50%;/*oki*/
 }
 header #logo img{
@@ -31,6 +56,105 @@ header #logo img{
 	padding-right: 0.5em;/*margen interno de una caja*/
 	margin-right: 0.5em;/*margen externo de una caja*/
 	width: 52px;/*el alto se calcula automaticamente y proporcionalmente*/
+}
+nav{
+	background: #80BCA3;
+	position: relative;
+}
+nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul li{
+	display: inline-block;
+	margin:0 1em 0 0;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	/*background: red;*/
+	display: block;/*a por defecto son elementos inline*/
+	padding: 0.5em;
+}
+nav ul #publicar_nav{
+	position: absolute;
+	top: -0.1em;
+	right: 0;
+}
+nav ul #publicar_nav{
+	background: #22BCE0;
+	border-radius: 5px;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;/*desp x,desp y, difuminacion sombra*/
+	font-style: italic;
+	padding: 0.6em 0.8em;
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;/*desp x,desp y, difuminacion sombra*/;
+}
+#contenido{
+	margin: 1em;
+}
+#contenido .item{
+	background: white;
+	border-bottom: 3px solid #22BCE0;
+	margin-bottom: 3em;
+	min-height: 128px;
+	position: relative;
+}
+#contenido .item .autor_item {
+	color: #AAA;
+}
+#contenido .item .datos_item {
+	margin: 1em 1em 0 0;
+}
+#contenido .item .datos_item .fecha_item{
+	color: #AAA;
+	float: right;
+}
+#contenido .item .datos_item .tag_item{
+	background: #F4502A;
+	border-radius: 0.5em;
+	color: white;
+	display: inline-block;
+	padding: 0.2em 0.5em;
+	text-decoration: none;
 
 }
+#contenido .item .imagen_item {
+	float: left;
+	margin-right: 1em;
+}
+#contenido .item .imagen_item img{
+	width: 96px;
+}
+#contenido .item .titulo_item{
+	font-size: 1.2em;
+	font-style: italic;
+	margin-bottom: 0;
+	padding: 1em 1em 0 0;
+}
+#contenido .item .titulo_item a{
+	color: #444;
+	text-decoration: none;
+}
+#contenido .item .votacion{
+	background: white;
+	/*border: 1px solid red;*/
+	border-radius: 0 0 0.5em 0.5em;
+	left: 3%;
+	margin-top: 3px;
+	padding: 0.5em 1em;
+	position: absolute;
+	right: 3%;
+	top: 100%;
+}
+#contenido .item .votacion .comentarios_item,
+#contenido .item .votacion .guardar_item{
+	float: right;
+}
+
+
+
+
+
 /*48 min*/
+/*averigurar nth-child*/
